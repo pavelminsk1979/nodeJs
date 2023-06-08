@@ -25,7 +25,6 @@ app.get('/', (req, res) => {
 })
 
 app.post('/message', async function (req, res) {
-try{
 
     let {message, email, name} = req.body
     let info = await transporter.sendMail({
@@ -40,11 +39,7 @@ try{
     console.log('----------------------')
     console.log('send info:',info)
     console.log('----------------------')
-   return res.send({data: 'Mail send'})}
-    catch (e) {
-    return  res.send(JSON.stringify(e,null,2))
-        console.log('error',e)
-    }
+    res.send(req.body)
 })
 
 app.listen(port, () => {
