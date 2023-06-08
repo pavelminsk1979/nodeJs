@@ -38,8 +38,9 @@ try{
 <div>Текст сообщения :${message}</div>`,
     });
 
-   return res.send(req.body)}
+   return res.send({data: 'Mail send'})}
     catch (e) {
+    return  res.send(JSON.stringify(e,null,2))
         console.log('error',e)
     }
 })
