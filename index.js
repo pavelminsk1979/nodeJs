@@ -37,7 +37,9 @@ try{
 <div>Контакт:${email}</div>
 <div>Текст сообщения :${message}</div>`,
     });
-
+    console.log('----------------------')
+    console.log('send info:',info)
+    console.log('----------------------')
    return res.send({data: 'Mail send'})}
     catch (e) {
     return  res.send(JSON.stringify(e,null,2))
