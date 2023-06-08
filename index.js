@@ -25,11 +25,12 @@ app.get('/', (req, res) => {
 })
 
 app.post('/message', async function (req, res) {
+try{
 
     let {message, email, name} = req.body
     let info = await transporter.sendMail({
         from: 'MY PORTFOLIO',
-        to: "sonasaw203@ozatvn.com",
+        to: "pavelminsk1979@mail.ru",
         subject: "portfolio",
         html: `<b>Сообщение из моего портфолио</b>
 <div>От кого:${name}</div>
@@ -37,7 +38,10 @@ app.post('/message', async function (req, res) {
 <div>Текст сообщения :${message}</div>`,
     });
 
-    res.send(req.body)
+   return res.send(req.body)}
+    catch (e) {
+        console.log('error',e)
+    }
 })
 
 app.listen(port, () => {
