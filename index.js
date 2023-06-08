@@ -30,7 +30,7 @@ try{
     let {message, email, name} = req.body
     let info = await transporter.sendMail({
         from: 'MY PORTFOLIO',
-        to: "pavelminsk1979@mail.ru",
+        to: "sonasaw203@ozatvn.com",
         subject: "portfolio",
         html: `<b>Сообщение из моего портфолио</b>
 <div>От кого:${name}</div>
